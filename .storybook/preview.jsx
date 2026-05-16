@@ -1,3 +1,4 @@
+import React from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
@@ -62,11 +63,11 @@ const preview = {
     },
   },
   decorators: [
-    (Story) => (
+    (StoryComponent) => (
       <ThemeProvider theme={defaultTheme}>
         <CssBaseline />
         <div style={{ width: '100%', paddingTop: '40px' }}>
-          <Story />
+          {React.createElement(StoryComponent)}
         </div>
       </ThemeProvider>
     ),
